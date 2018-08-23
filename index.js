@@ -34,8 +34,11 @@ App.get('/getRequest', (req, res) =>{
 App.post('/postRequest', (req, res) => {
 
     /** Write business logic here  **/
-    
-    res.jsonp(req.body); 
+    if(req.body.height && req.body.width){
+        _result = req.body.height * req.body.width;
+    }
+
+    res.jsonp({ multiplication: _result });
 });
 
 
@@ -44,9 +47,13 @@ App.post('/postRequest', (req, res) => {
 ************(Postman and give body data)*************/
 App.put('/putRequest', (req, res) => {
     
+    let _result;
     /** Write business logic here  **/
-    
-    res.jsonp(req.body);
+    if(req.body.height && req.body.width){
+        _result = req.body.height * req.body.width;
+    }
+
+    res.jsonp({ multiplication: _result });
 });
 
 
@@ -56,6 +63,9 @@ App.put('/putRequest', (req, res) => {
 App.delete('/deleteRequest', (req, res) => {
     
     /** Write business logic here  **/
+    let _result = { 
+        customMessage: 'DELETED SUCCESSFULLY'
+    }
     
     res.jsonp(req.body);
 });

@@ -24,9 +24,11 @@ Open http://localhost:4001 to check that your server is running or not.
         -       { name: radhey }
 - Post
     - `http://localhost:4001/postRequest`
-        - Select POST from the Drop box with GET `Default Request` 
+        - Select POST from the Drop box `Default Request is GET` 
         - Copy and paste it on postman input fiels
         - Select body type RAW and then Select body data as a json.
+        - Put dat in body section of post request:
+        -       { "height": 10, "width": 20 }
         - Then Hit the request
 - Put
     - `http://localhost:4001/putRequest`
